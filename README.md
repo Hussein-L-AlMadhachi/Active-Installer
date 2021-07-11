@@ -27,9 +27,9 @@ user@machine:~$ chmod +x setup.sh && ./setup.sh
 """
 
 * write the following in your shell then select your operating system:
-""" shell
+" shell
 user@machine:~$ linins setup
-"""
+"
 
 * now Linins is ready so if want to download a repository then inside its directory run:
 Note: the repository here is only an examle of any reposiotry 
