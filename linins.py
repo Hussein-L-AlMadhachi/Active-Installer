@@ -50,15 +50,15 @@ def clone( url ):
 def setup():
     settingObj = ParserLib.SettingFile()
     print( "What is the Linux disribution that you are using?" )
-    print( "\t1)  Arch" )
-    print( "\t2)  Fedora" )
-    print( "\t3)  OpenSUSE" )
+    print( "\t1)  Arch Linux" )
+    print( "\t2)  Fedora Linux" )
+    print( "\t3)  OpenSUSE Linux" )
     print( "\t4)  CentOS" )
     print( "\t5)  Apline Linux" )
-    print( "\t6)  Gentoo" )
-    print( "\t7)  FreeBSD\n" )
-    print( "\t8)  Debian" )
-    print( "\t9)  Ubuntu" )
+    print( "\t6)  Gentoo Linux" )
+    print( "\t7)  BSD\n" )
+    print( "\t8)  Debian Linux" )
+    print( "\t9)  Ubuntu Linux" )
         
     user_choice = input( "write the number of your choice: " )
     if user_choice in [ "1" , "3" , "4" , "5" , "6" , "7" , "8" , "9" ]:
@@ -80,18 +80,19 @@ def start_settings_interface():
     
     if user_choice == "1":
         print( "What is the Linux disribution that you are using?" )
-        print( "\t0)  Debian" )
-        print( "\t1)  Arch" )
-        print( "\t2)  Fedora" )
-        print( "\t3)  OpenSUSE" )
-        print( "\t4)  Apline Linux" )
-        print( "\t5)  Gentoo" )
-        print( "\t6)  FreeBSD\n" )
-        
+        print( "\t1)  Arch Linux" )
+        print( "\t2)  Fedora Linux" )
+        print( "\t3)  OpenSUSE Linux" )
+        print( "\t4)  CentOS" )
+        print( "\t5)  Apline Linux" )
+        print( "\t6)  Gentoo Linux" )
+        print( "\t7)  BSD\n" )
+        print( "\t8)  Debian Linux" )
+        print( "\t9)  Ubuntu Linux" )        
         user_choice = input("write the number of your choice: ")
         
         
-        valid_choices = [ 0 , 1 , 2 , 3 , 4 , 5 , 6 ]
+        valid_choices = [ "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" ]
         
         if user_choice in valid_choices:
             ParserLib.settings[ "Distribtuion" ] = user_choice
