@@ -45,6 +45,6 @@ user@machine:~$ cd ( path to the folder that contains 'InstallFile')
 
 ```
 
-``` bas
+``` bash
 user@machine:~$ linins install
 ```
