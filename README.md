@@ -32,6 +32,7 @@ user@machine:~$ linins setup
 ```
 
 * now Linins is ready so if want to download a repository then inside its directory run:
+
 Note: the repository here is only an examle of any reposiotry 
 
 ``` shell
