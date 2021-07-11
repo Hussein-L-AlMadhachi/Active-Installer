@@ -47,5 +47,5 @@ user@machine:~$ linins install
 ```
 or instead run all three together with this line :
 ``` bash
-user@machine:~$ git clone [URL of the repository you want to install] && cd Linins && linins install
+user@machine:~$ git clone [URL of the repository you want to install] && cd [repository name] && linins install
 ```
