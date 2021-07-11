@@ -1,6 +1,6 @@
 # Linins source installer
 ##### Linins 2021 version 0.1.0 
-![The Linins Project](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/0c1c641ccc10122d3080cefc32d0b16c2e62c3fa/logo.svg)
+
 Linins is souce code installer for compiling and installing source code with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible primarly for Linux and also other open source operating systems
 ---
 
