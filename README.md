@@ -43,8 +43,8 @@ user@machine:~$ linins clone [URL]
 ``` bash
 user@machine:~$ cd ( path to the folder that contains 'InstallFile')
 
+```
 
+``` bas
 user@machine:~$ linins install
-
-
 ```
