@@ -41,7 +41,8 @@ def install():
 def clone( url ):
     os.system(  "git clone " + url  )
     current_directory = os.getcwd()
-    cd(   url[  url.rindex( "/" )  :  ]   ) # change directory
+    cd(   current_directory   +   "/"   +   url[  url.rindex( "/" )  :  url.rindex(".") ]   ) # change directory
+    
     install()
 
 
