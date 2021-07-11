@@ -61,7 +61,7 @@ def setup():
     print( "\t9)  Ubuntu" )
         
     user_choice = input( "write the number of your choice: " )
-    if user_choice in [ "0" , "1" , "3" , "4" , "5" , "6" ]:
+    if user_choice in [ "1" , "3" , "4" , "5" , "6" , "7" , "8" , "9" ]:
         ParserLib.settings.update( { "Distribution" : user_choice } )
         settingObj.save()
         print( "[!] saved" )
