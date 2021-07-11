@@ -43,7 +43,7 @@ Now Linins is ready. if you have the repository URL that supports Linins, to ins
 user@machine:~$ linins clone [URL]
 ```
 
-or if you the source code that you have has Linins installtion files `InstallFile` write:
+or if you have a source code for a project and the project has Linins installtion files `InstallFile` write:
 
 ``` bash
 user@machine:~$ cd (path to the folder that contains 'InstallFile')
