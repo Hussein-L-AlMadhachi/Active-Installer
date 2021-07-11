@@ -41,7 +41,7 @@ user@machine:~$ linins clone [URL]
 * or if you the source code that you have has Linins installtion files `InstallFile` write:
 
 ``` bash
-user@machine:~$ cd ( path to the folder that contains 'InstallFile')
+user@machine:~$ cd (path to the folder that contains 'InstallFile')
 
 ```
 
