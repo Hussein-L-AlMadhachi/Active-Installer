@@ -32,14 +32,13 @@ user@machine:~$ sh setup.sh
 user@machine:~$ linins setup
 ```
 
-* Now Linins is ready.
-if you have the repository URL that supports Linins, to install it automatically write:
+* Now Linins is ready. if you have the repository URL that supports Linins, to install it automatically write:
 
 ``` bash
 user@machine:~$ linins clone [URL]
 ```
 
-or if you the source code that you have has Linins installtion files `InstallFile` write:
+* or if you the source code that you have has Linins installtion files `InstallFile` write:
 
 ``` bash
 user@machine:~$ cd ( path to the folder that contain 'InstallFile')
