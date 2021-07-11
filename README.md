@@ -38,7 +38,7 @@ user@machine:~$ linins setup
 user@machine:~$ git clone [URL of the repository you want to install]
 
 
-user@machine:~$ cd Linins
+user@machine:~$ cd [repository name]
 
 
 user@machine:~$ linins install
