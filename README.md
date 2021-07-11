@@ -21,24 +21,24 @@ if you wanted to make an open source project one of the biggest challenges that 
 * You can clone repositories that support Linins Installation file's format "InstallFile" and install additional software that is specified in those repositories installtion files without worrying about how to install them when you writing your installtion files
 
 ## how a user should install ansd use this
-* save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/setup.sh) and run it
+1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/setup.sh) and run it
 ``` bash
 user@machine:~$ sh setup.sh
 ```
 
-* Write the following in your shell then select your operating system:
+2. Write the following in your shell then select your operating system:
 
 ``` bash
 user@machine:~$ linins setup
 ```
 
-* Now Linins is ready. if you have the repository URL that supports Linins, to install it automatically write:
+3. Now Linins is ready. if you have the repository URL that supports Linins, to install it automatically write:
 
 ``` bash
 user@machine:~$ linins clone [URL]
 ```
 
-* or if you the source code that you have has Linins installtion files `InstallFile` write:
+4. or if you the source code that you have has Linins installtion files `InstallFile` write:
 
 ``` bash
 user@machine:~$ cd (path to the folder that contains 'InstallFile')
