@@ -35,10 +35,10 @@ user@machine:~$ linins setup
 * now Linins is ready so if want to download a repository then run:
 
 ``` bash
-user@machine:~$ git clone [URL of the repository you want to install]
+user@machine:~$ git clone (URL of the repository you want to install)
 
 
-user@machine:~$ cd [repository name]
+user@machine:~$ cd (repository name)
 
 
 user@machine:~$ linins install
@@ -47,5 +47,5 @@ user@machine:~$ linins install
 ```
 or instead run all three together with this line :
 ``` bash
-user@machine:~$ git clone [URL of the repository you want to install] && cd [repository name] && linins install
+user@machine:~$ git clone (URL of the repository you want to install) && cd (repository name) && linins install
 ```
