@@ -7,7 +7,7 @@ Linins is souce code installer for compiling and installing source code with the
 ## Introduction
 
 if you wanted to make an open source project one of the biggest challenges that you have to face, is that your users uses a wide range of hardware devices , operating systems and software. and if your users do not have the needed technical knowladge, they cannot compile the source code and install all the required dependencies to uses the program or otherwise the the author of the project has to compile the source code for each operating system and in some cases for hardware devices or some software. so this software aims to solve this problem by providing you with the followings options to add to your shell script:
---
+
 
 * You can specify a line of shell script to run only the user is using a certain Linux distribution or a certain operating system
 * You can specify a line of shell script to run when a certain hardware device exist (e.g GPU , network adaptors)
