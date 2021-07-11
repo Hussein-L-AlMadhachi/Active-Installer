@@ -22,18 +22,19 @@ if you wanted to make an open source project one of the biggest challenges that 
 
 ## how a user should install ansd use this
 * run this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/setup.sh)
-``` shell
-user@machine:~$ chmod +x setup.sh && ./setup.sh
+``` bash
+user@machine:~$ sh setup.sh
 ```
 
 * write the following in your shell then select your operating system:
-``` shell
+
+``` bash
 user@machine:~$ linins setup
 ```
 
 * now Linins is ready so if want to download a repository then run:
 
-``` shell
+``` bash
 user@machine:~$ git clone [URL of the repository you want to install]
 
 
@@ -43,4 +44,8 @@ user@machine:~$ cd Linins
 user@machine:~$ linins install
 
 
+```
+or instead run all three together with this line :
+``` bash
+user@machine:~$ git clone [URL of the repository you want to install] && cd Linins && linins install
 ```
