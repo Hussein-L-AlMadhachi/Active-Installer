@@ -22,6 +22,10 @@ if you wanted to make an open source project one of the biggest challenges that 
 
 ## how a user should install and use this program
 
+___
+###### Disclaimer:
+###### You should NEVER EVER use this software to install anything other than source codes from a trusted sources DO NOT use this program for INSTALLING PROPRIETARY BINARIES that does not provide SOURCE CODES even if it was a trusted source there must be an unintentional bug somewhere in each program that may cause YOUR DEVICE TO be HACKED and EXPLOITED since these software does not provide a way to detect similar severe bugs and improper installation scripts can be detected and fixed if the source code is disclosed
+___
 
 ### The installation
 
