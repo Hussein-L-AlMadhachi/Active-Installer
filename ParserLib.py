@@ -33,7 +33,7 @@ class SettingFile:
 class InstallFile:
 #   inintialisation
     def __init__( self ):
-        file_descriptor = open( "HardwareInfo" , "r" )
+        file_descriptor = open( "/etc/Linins/HardwareInfo" , "r" )
         self.info = file_descriptor.read()
         file_descriptor.close()
 
