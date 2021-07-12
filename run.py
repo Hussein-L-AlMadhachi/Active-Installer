@@ -6,7 +6,7 @@ from os import system
 parameters = ""
 
 for arguement in arguements[ 1 : ]:
-    parameters += arguement
+    parameters += "" + arguement
 
 system( "~/.Linins/linins.py " + parameters )
 
