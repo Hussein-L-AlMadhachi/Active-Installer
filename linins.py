@@ -126,7 +126,7 @@ if len( args )  >  1:
     # clone
     elif  args[1] == "clone"  and  len(args) == 3:
         if  "/" in args[2]:
-            clone( url )
+            clone( args[2] )
         else:
             print( "[!] invalid URL" )
     # settings
