@@ -30,7 +30,7 @@ ___
 
 ### The installation
 
-1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/setup.sh) and run it
+1. save this [script](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/install.sh) and run it
 ``` bash
 user@machine:~$ sh setup.sh
 ```
