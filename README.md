@@ -32,7 +32,7 @@ ___
 
 1. save this [script](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/install.sh) and run it
 ``` bash
-user@machine:~$ sh setup.sh
+user@machine:~$ sh install.sh
 ```
 
 2. Write the following in your shell then select your operating system:
