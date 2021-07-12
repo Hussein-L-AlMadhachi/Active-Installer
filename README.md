@@ -1,5 +1,5 @@
 # Linins source code installer
-##### Linins 2021 version 0.1.0 (unstalble)
+##### Linins 2021 version 0.1.0 (in progress)
 
 ![The Linins Project](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/Linins_logo.png)
 
