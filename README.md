@@ -23,7 +23,7 @@ if you wanted to make an open source project one of the biggest challenges that 
 ## how a user should install and use this program
 
 ___
-###### Disclaimer:
+#### Disclaimer:
 ###### You should NEVER EVER use this software to install anything other than source codes from a **TRUSTED** sources **DO NOT** use this program to INSTALL **BINARIES** that does **NOT** provide the SOURCE CODES even if it was from **trusted sources** if the source code is not provided. For **YOUR OWN SAFETY** DO NOT install such programs using Linins because there must be an unintentional bug somewhere (e.g root privileges escalation , remote code execution) since these software do not provide any way to detect such severe bugs by any experts so we highly discourage the installation of software that does not provide source code 
 ___
 
