@@ -10,7 +10,7 @@ settings = {}
 class SettingFile:
     def __init__( self ):
         # this file stores the number that referes to the users distro and stores programs that needs root permissions
-        self.SettingFile = "SettingFile"
+        self.SettingFile = "/etc/Linins/SettingFile"
 
     #   load settings from SettingFile    
     def load( self ):
@@ -60,9 +60,10 @@ class InstallFile:
         remove_a_char_at( " " , 0 )
         
         
-        #  don't parse empty lines
+        #  don't parse emty lines
         if len(  self.line_of_script.replace(" ","").replace("\t","").replace("\n","")  ) == 0:
-            return "# ignore empty line"
+            print("[!] emty line !!!!!!")
+            exit(0)
         
         #  distribution specific script
         elif self.line_of_script[ 0 ] == settings[ "Distribution" ]:
@@ -78,7 +79,7 @@ class InstallFile:
                 self.script = self.line_of_script[  line_of_script.index( ":" ) + 1  :  ]
                 return self.script
             else:
-                return "# hardware specific script don't match the device"
+                return "#"
         
 
     #  software specific script
@@ -88,7 +89,7 @@ class InstallFile:
                 self.script = self.line_of_script[  self.line_of_script.index( ":" ) + 1  :  ]
                 return  self.script
             else:
-                return "# software specific script don't match the device"
+                return "#"
         
         
         #  general purpose script

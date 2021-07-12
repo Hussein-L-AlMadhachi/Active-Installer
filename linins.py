@@ -114,7 +114,10 @@ def start_settings_interface():
 
 
 # main program execution
-print("The Linux Installer   Linins 2021     version 0.1.0")
+
+print("The Linux Installer   Linins 2021     version 0.1.0\n")
+
+
 
 if len( args )  >  1:
     # install
