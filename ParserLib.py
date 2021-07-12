@@ -60,10 +60,9 @@ class InstallFile:
         remove_a_char_at( " " , 0 )
         
         
-        #  don't parse emty lines
+        #  don't parse empty lines
         if len(  self.line_of_script.replace(" ","").replace("\t","").replace("\n","")  ) == 0:
-            print("[!] emty line !!!!!!")
-            exit(0)
+            return "# ignore empty line"
         
         #  distribution specific script
         elif self.line_of_script[ 0 ] == settings[ "Distribution" ]:
@@ -79,7 +78,7 @@ class InstallFile:
                 self.script = self.line_of_script[  line_of_script.index( ":" ) + 1  :  ]
                 return self.script
             else:
-                return "#"
+                return "# hardware specific script don't match the device"
         
 
     #  software specific script
@@ -89,7 +88,7 @@ class InstallFile:
                 self.script = self.line_of_script[  self.line_of_script.index( ":" ) + 1  :  ]
                 return  self.script
             else:
-                return "#"
+                return "# software specific script don't match the device"
         
         
         #  general purpose script
