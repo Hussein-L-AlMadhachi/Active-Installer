@@ -9,4 +9,3 @@ for arguement in arguements[ 1 : ]:
     parameters += " " + arguement
 
 system( "~/.Linins/linins.py " + parameters )
-
