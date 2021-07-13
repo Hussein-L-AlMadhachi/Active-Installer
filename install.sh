@@ -47,4 +47,4 @@ sudo linins setup
 linins install
 
 cd ..
-rm Linins
+rm -rf Linins
