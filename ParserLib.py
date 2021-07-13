@@ -60,10 +60,9 @@ class InstallFile:
         remove_a_char_at( " " , 0 )
         
         
-        #  don't parse emty lines
+        #  don't parse empty lines
         if len(  self.line_of_script.replace(" ","").replace("\t","").replace("\n","")  ) == 0:
-            print("[!] emty line !!!!!!")
-            exit(0)
+            return "#"
         
         #  distribution specific script
         elif self.line_of_script[ 0 ] == settings[ "Distribution" ]:
