@@ -18,7 +18,7 @@ if you wanted to make an open source project one of the biggest challenges that 
 * You can clone any other additionl repositories
 * You can clone repositories that support Linins Installation file's format "InstallFile" and install additional software that is specified in those repositories installtion files without worrying about how to install them when you writing your installtion files
 
-## how a user should install and use this program
+## how the user should install and use this program
 
 
 ### The installation
