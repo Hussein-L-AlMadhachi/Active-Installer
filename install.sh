@@ -22,23 +22,20 @@ sudo pkg install pciutils
 sudo apk add --upgrade pciutils-dev
 
 
-
-mkdir ~/.Linins
+sudo mkdir /usr/src/Linins
 sudo mkdir /etc/Linins
-
 
 git clone https://github.com/Hussein-L-AlMadhachi/Linins.git
 cd Linins
 
 
-cp ./linins.py ~/.Linins
-cp ./ParserLib.py ~/.Linins
-chmod +x ~/.Linins/linins.py
+sudo cp ./linins.py /usr/src
+sudo cp ./ParserLib.py /usr/src
+chmod +x /usr/src/linins.py
 
-touch /etc/Linins/SettingFile
+sudo touch /etc/Linins/SettingFile
 lspci > HardwareInfo && sudo mv HardwareInfo /etc/Linins
-
-
+rm HardwareInfo
 
 sudo cp run.py /usr/bin/linins
 sudo chmod +x /usr/bin/linins
@@ -46,3 +43,4 @@ sudo chmod +x /usr/bin/linins
 echo "[*] Linins installtion is completed"
 echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Linins/issues"
 
+sudo linins setup

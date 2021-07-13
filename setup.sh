@@ -5,18 +5,21 @@ echo "Installing Linins 2021 version 0.1.0"
 
 echo "[o] Note: this requires root permission"
 
-mkdir ~/.Linins
+sudo mkdir /etc/Linins
 
-cp ./linins.py ~/.Linins
+sudo mkdir /usr/src/Linins
 
-cp ./ParserLib.py ~/.Linins
+sudo cp ./linins.py /usr/src/Linins
+
+sudo cp ./ParserLib.py /usr/src/Linins
 
 
-touch /etc/Linins/SettingFile
+sudo touch /etc/Linins/SettingFile
 
-lspci > /etc/Linins/HardwareInfo
+lspci > HardwareInfo && sudo mv HardwareInfo /etc/Linins
 
-chmod +x ~/.Linins/linins.py
+sudo chmod +x /usr/src/Linins/linins.py
+
 
 sudo cp run.py /usr/bin/linins
 
@@ -24,18 +27,4 @@ sudo chmod +x /usr/bin/linins
 
 echo "[*] Linins installtion is completed"
 echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Linins/issues"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -56,7 +56,7 @@ def setup():
     print( "\t4)  CentOS" )
     print( "\t5)  Apline Linux" )
     print( "\t6)  Gentoo Linux" )
-    print( "\t7)  BSD\n" )
+    print( "\t7)  BSD" )
     print( "\t8)  Debian Linux" )
     print( "\t9)  Ubuntu Linux" )
         
@@ -78,6 +78,8 @@ def start_settings_interface():
     print( options )
     user_choice = input( "choice >  " )
     
+    settingObj = ParserLib.SettingFile()
+    
     if user_choice == "1":
         print( "What is the Linux disribution that you are using?" )
         print( "\t1)  Arch Linux" )
@@ -86,7 +88,7 @@ def start_settings_interface():
         print( "\t4)  CentOS" )
         print( "\t5)  Apline Linux" )
         print( "\t6)  Gentoo Linux" )
-        print( "\t7)  BSD\n" )
+        print( "\t7)  BSD" )
         print( "\t8)  Debian Linux" )
         print( "\t9)  Ubuntu Linux" )        
         user_choice = input("write the number of your choice: ")
@@ -95,7 +97,7 @@ def start_settings_interface():
         valid_choices = [ "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" ]
         
         if user_choice in valid_choices:
-            ParserLib.settings[ "Distribtuion" ] = user_choice
+            ParserLib.settings[ "Distribution" ] = user_choice
             settingObj.save()
             print( "[*] saved" )
             exit(0)
