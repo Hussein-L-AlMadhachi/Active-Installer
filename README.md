@@ -23,7 +23,7 @@ if you wanted to make an open source project one of the biggest challenges that 
 
 ### The installation
 
-1. save this [script](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/install.sh) and run it
+1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) and run it
 ``` bash
 user@machine:~$ sh install.sh
 ```
