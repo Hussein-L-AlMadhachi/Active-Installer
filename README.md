@@ -18,30 +18,22 @@ if you wanted to make an open source project one of the biggest challenges that 
 * You can clone any other additionl repositories
 * You can clone repositories that support Linins Installation file's format "InstallFile" and install additional software that is specified in those repositories installtion files without worrying about how to install them when you writing your installtion files
 
-## how the user should install and use this program
+## how a regular user should use Linins
 
+if you want to install a repository or source code that support Linins installation file format `InstallFile` then to install Linins do this:  
 
-### The installation
-
-1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) and run it
+save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) and run it
 ``` bash
 user@machine:~$ sh install.sh
-```
+``` 
 
-2. Write the following in your shell then select your operating system:
-
-``` bash
-user@machine:~$ linins setup
-```
-### How to use
-
-Now Linins is ready. if you have the repository URL that supports Linins, to install it automatically write:
+Now Linins is ready. if you have the repository Git URL and that project supports Linins, to download the repository and install it automatically write:
 
 ``` bash
 user@machine:~$ linins clone [URL]
 ```
 
-or if you have a source code for a project and the project has Linins installtion files `InstallFile` write:
+or if you have the source code for a project and the project has Linins installtion files `InstallFile` write:
 
 ``` bash
 user@machine:~$ cd (path to the folder that contains 'InstallFile')
@@ -51,3 +43,15 @@ user@machine:~$ cd (path to the folder that contains 'InstallFile')
 ``` bash
 user@machine:~$ linins install
 ```
+If you wanted to access and change Linins settings write:
+``` bash
+user@machine:~$ sudo linins settings
+```
+if you ran into any problems for example your files are deleted or Linins is not functioning correctly then rerun the installtion script `sh install.sh` and it's okay to see some error messages
+<!--
+### How a developer who wants to create an installer and a compiler for his/her project should use it
+1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) and run it
+```
+user@machine:~$ sh install.sh
+```
+-->
