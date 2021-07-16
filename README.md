@@ -80,7 +80,7 @@ runs only when the script runs on the specified distribution you should write it
 ```
 [disribution number] [script]
 ```
-where the numbers for each disribution are:
+where the numbers for each disribution are:  
 `1` for Arch Linux  
 `2` for Fedora Linux  
 `3` for OpenSUSE Linux  
