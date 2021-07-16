@@ -44,7 +44,6 @@ echo "[*] Linins installtion is completed"
 echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Linins/issues\n"
 
 sudo linins setup
-linins install
 
 cd ..
 rm -rf Linins
