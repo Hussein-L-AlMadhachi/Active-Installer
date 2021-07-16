@@ -145,3 +145,11 @@ to see how your script in executed you use
 user@machine:~$ linins debug
 ```
 if the executed script was `#` that means that line of script is not executed either because of wrong script or the specific lines of script don't match with what you have (e.g Hardware device , Software path , Operating system) on your computer
+
+# Final words
+Have you seen any problem?
+Do you think there is something we forgot?  
+Do you have some ideas about how to improve this program?  
+
+Join our [Community discussions](https://github.com/Hussein-L-AlMadhachi/Linins/discussions)
+Report an [Isseue](https://github.com/Hussein-L-AlMadhachi/Linins/issues)
