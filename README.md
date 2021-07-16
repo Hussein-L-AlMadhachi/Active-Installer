@@ -139,3 +139,9 @@ so the script for python3.9 inside the `InstallFile` should be:
 ```
 @python3.9: echo "you are using Python version 3.9"
 ```
+# Debug your installation script
+to see how your script in executed you use
+```
+user@machine:~$ linins debug
+```
+if the executed script was `#` that means that line of script is not executed either because of wrong script or the specific lines of script don't match with what you have (e.g Hardware device , Software path , Operating system) on your computer
