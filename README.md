@@ -59,7 +59,7 @@ user@machine:~$ sh install.sh
 
 2. create installation file script in a file called `InstallFile` which we will talk about how to write the script inside it in the next section
 
-3. add [installer.sh](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/Linins-installer.sh) to the same path that `InstallFile` is located
+3. add [`Linins-installer.py`](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/Linins-installer.sh) to the same path that `InstallFile` is located
 
 4. Now the user can use [`Linins-installer.py`](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/Linins-installer.sh) to install Linins and run your installation script automatically and notify the user that you support Linins installation files so they can clone your repository using `linins clone [your URL]`
 
