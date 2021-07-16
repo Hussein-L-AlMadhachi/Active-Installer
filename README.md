@@ -49,10 +49,93 @@ user@machine:~$ sudo linins settings
 ```
 if you ran into any problems for example your files are deleted or Linins is not functioning correctly then rerun the installtion script  
 `sh install.sh` and it's okay to see some error messages
-<!--
-### How a developer who wants to create an installer and a compiler for his/her project should use it
-1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) and run it
+
+### How a developer who wants to create an installer and a compiler for his/her project should use this program
+
+1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) then run it
 ```
 user@machine:~$ sh install.sh
 ```
--->
+
+2. create installation file script in a file called `InstallFile` which we will talk about how to write the script inside it in the next section
+
+3. add [installer.sh]() to the same path that `InstallFile is located`
+
+4. Now the user can use `Installer.sh` to install Linins and run your installation script automatically and notify the user that you support Linins installation files so they can clone your repository using `linins clone [your URL]`
+
+# Creating Installation files
+installation files are just a regular shell scripts and the only difference is that it contains some suffix and notations to specify when a line of script should run these suffix so first create a file called `InstallFile` then follow these instruction to write your script  
+
+Linins provide you five ways to write your installtion file's script:
+
+## regular shell script
+runs on any computer you should write it just like any regular shell script for example
+```
+echo "hello this is a computer that runs shell script"
+```
+
+
+## one distribution or one operating system specific script
+runs only when the script runs on the specified distribution you should write it in this order
+```
+[disribution number] [script]
+```
+where the numbers for each disribution are:
+`1` for Arch Linux  
+`2` for Fedora Linux  
+`3` for OpenSUSE Linux  
+`4` for CentOS  
+`5` for Apline Linux  
+`6` for Gentoo Linux  
+`7` for BSD  
+`8` for Debian Linux  
+`9` for Ubuntu Linux  
+for example:
+```
+5 echo "hello Alpine Linux user"
+```
+
+if you think we forgot some distributions or open source operating systems tell us in the [Discussions](https://github.com/Hussein-L-AlMadhachi/Linins/discussions)
+
+
+## A script specific for a gourp of distributions or operating systems
+runs when the operating system that the user has is inside the the group 
+```
+{ [distribution number] , [distribution number] }  [script]
+```
+Note: space are tolerated inside `{}`
+
+
+
+## Hardware specific script
+runs when a hardware device exist you should first run this in your terminal:
+```
+user@machine:~$ lspci
+... etc
+0000:01:00.0 3D controller: NVIDIA Corporation GP107M [GeForce MX350] (rev a1)
+... etc
+```
+let say that you want to your program to install dirvers for a NVIDIA graphics card and you want your script to run for this model `GeForce MX350` now to create an installtion script write this way
+```
+#[the keyword(s) inside the lspci command]: [script to run]
+```
+note that you should copy the words that you are looking for in the `lspci` command and place them between `#` and `:` and remmember that spaces between `#` and `:` counts as a part of the word that you are looking for.  
+so your installation script going to be:
+```
+#GeForce MX350: echo "installing NVIDIA GeForce MX350 drivers"
+```
+or for example if you want your script to run for any Nvidia GPU then just change the keyword `GeForce MX350` to `NVIDIA`
+```
+#NVIDIA: echo "you are using Nvidia GPU"
+```
+
+## Software specific script
+runs when the specified software path exist to write this you should know where the software that you are looking for is located for example some programs require to be ran only on python3.9
+
+```
+@[software path]: [script]
+```
+so the script for python3.9 inside the `InstallFile` should be:
+```
+@python3.9: echo "you are using Python version 3.9"
+```
