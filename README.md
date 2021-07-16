@@ -151,5 +151,5 @@ Have you seen any problem?
 Do you think there is something we forgot?  
 Do you have some ideas about how to improve this program?  
 
-Join our [Community discussions](https://github.com/Hussein-L-AlMadhachi/Linins/discussions)
+Join our [Community discussions](https://github.com/Hussein-L-AlMadhachi/Linins/discussions)  
 Report an [Isseue](https://github.com/Hussein-L-AlMadhachi/Linins/issues)
