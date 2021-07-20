@@ -50,7 +50,7 @@ user@machine:~$ sudo linins settings
 if you ran into any problems for example your files are deleted or Linins is not functioning correctly then rerun the installtion script  
 `sh install.sh` and it's okay to see some error messages
 
-### How a developer who wants to create an installer and a compiler for his/her project should use this program
+## How a developer who wants to create an installer and a compiler for his/her project should use this program
 
 1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) then run it
 ```
