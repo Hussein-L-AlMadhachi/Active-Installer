@@ -1,30 +1,30 @@
 #!/bin/sh
 
 
-echo "Installing Linins 2021 version 0.1.0"
+echo "Installing Active installer 2021 version 0.1.0"
 
 echo "[o] Note: this requires root permission"
 
-sudo mkdir /etc/Linins
+sudo mkdir /etc/active
 
-sudo mkdir /usr/src/Linins
+sudo mkdir /usr/src/active
 
-sudo cp ./linins.py /usr/src/Linins
+sudo cp ./active.py /usr/src/active
 
-sudo cp ./ParserLib.py /usr/src/Linins
-
-
-sudo touch /etc/Linins/SettingFile
-
-lspci > HardwareInfo && sudo mv HardwareInfo /etc/Linins
-
-sudo chmod +x /usr/src/Linins/linins.py
+sudo cp ./ParserLib.py /usr/src/active
 
 
-sudo cp run.py /usr/bin/linins
+sudo touch /etc/active/SettingFile
 
-sudo chmod +x /usr/bin/linins
+lspci > HardwareInfo && sudo mv HardwareInfo /etc/active
 
-echo "[*] Linins installtion is completed"
-echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Linins/issues"
+sudo chmod +x /usr/src/active/linins.py
+
+
+sudo cp run.py /usr/bin/active
+
+sudo chmod +x /usr/bin/active
+
+echo "[*] Active installer installtion is completed"
+echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Active-Installer/issues"
 
