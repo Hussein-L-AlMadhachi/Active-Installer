@@ -1,8 +1,8 @@
 #!/bin/sh
 
-sudo cp linins.py /usr/src/Linins/linins.py
+sudo cp active.py /usr/src/active/active.py
 
-sudo cp ParserLib.py /usr/src/Linins/ParserLib.py
+sudo cp ParserLib.py /usr/src/active/ParserLib.py
 
 
 echo "[*] reloading is completed"
