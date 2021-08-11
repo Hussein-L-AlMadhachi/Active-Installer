@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo Using Linins 2021 version 0.1.0
+echo Using Active installer 2021 version 0.1.0
 
 echo "[o] Note: this may require root permission"
 echo "[*] It is ok to see some errors"
