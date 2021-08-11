@@ -7,12 +7,12 @@ Linins is souce code installer for compiling and installing source code with the
 ---
 
 # Content
-1. why to use this program
-2. How a regular user should use Linins
-3. How to create an installer for your project with Linins
-5. Final words
+* Why to use this program
+* How a regular user should use Linins
+* How to create an installer for your project with Linins
+* Final words
 
-## Introduction
+## Why to use this program
 
 if you wanted to make an open source project one of the biggest challenges that you have to face, is that your users uses a wide range of hardware devices , operating systems and software. and if your users do not have the needed technical knowladge, they cannot compile the source code and install all the required dependencies to use the program. so the author of the project has to compile the source code for each operating system and in some cases for some certain hardware devices or some certain software. that is why this program aims to solve this problem by providing you with the followings options to add to your shell scripts:
 
