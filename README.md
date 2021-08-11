@@ -8,9 +8,9 @@ Linins is souce code installer for compiling and installing source code with the
 
 # Content
 1. ![The introduction](#introduction)
-2. ![How a regular user should use Linins]()
-3. ![How to create an installer for your project with Linins]()
-5. ![Final words]()
+2. ![How a regular user should use Linins](#how-a-regular-user-should-use-linins)
+3. ![How to create an installer for your project with Linins](#how-a-developer-who-wants-to-create-an-installer-and-a-compiler-for-hisher-project-should-use-this-program)
+5. ![Final words](#final-words)
 
 ## Introduction
 
