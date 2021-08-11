@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo Installing Linins 2021 version 0.1.0
+echo Installing Active installer 2021 version 0.1.0
 
 echo "[o] Note: this requires root permission"
 echo "[*] It is ok to see some errors"
@@ -22,28 +22,28 @@ sudo pkg install pciutils
 sudo apk add --upgrade pciutils-dev
 
 
-sudo mkdir /usr/src/Linins
-sudo mkdir /etc/Linins
+sudo mkdir /usr/src/active
+sudo mkdir /etc/active
 
-git clone https://github.com/Hussein-L-AlMadhachi/Linins.git
-cd Linins
+git clone https://github.com/Hussein-L-AlMadhachi/Active-Installer.git
+cd Active-Installer
 
 
-sudo cp ./linins.py /usr/src
-sudo cp ./ParserLib.py /usr/src
-chmod +x /usr/src/linins.py
+sudo cp ./active.py /usr/src/active
+sudo cp ./ParserLib.py /usr/src/active
+chmod +x /usr/src/active/active.py
 
-sudo touch /etc/Linins/SettingFile
-lspci > HardwareInfo && sudo mv HardwareInfo /etc/Linins
+sudo touch /etc/active/SettingFile
+lspci > HardwareInfo && sudo mv HardwareInfo /etc/active
 rm HardwareInfo
 
-sudo cp run.py /usr/bin/linins
-sudo chmod +x /usr/bin/linins
+sudo cp run.py /usr/bin/active
+sudo chmod +x /usr/bin/active
 
-echo "[*] Linins installtion is completed"
-echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Linins/issues\n"
+echo "[*] Active Installer installtion is completed"
+echo "\nif you have seen any problems report them at \n    https://github.com/Hussein-L-AlMadhachi/Active-Installer/issues\n"
 
-sudo linins setup
+sudo active setup
 
 cd ..
-rm -rf Linins
+rm -rf Active-Installer
