@@ -1,15 +1,15 @@
-# Linins source code installer
-##### Linins 2021 version 0.1.0
+# Active source code installer
+##### Active installer 2021 version 0.1.0
 
-![The Linins Project](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/LININS.png)
+![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png)
 
-Linins is souce code installer for compiling and installing source code with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible for Linux and also other open source operating systems
+Active installer is souce code installer for compiling and installing source code with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible for Linux and also other open source operating systems
 ---
 
 # Content
 * Why to use this program
-* How a regular user should use Linins
-* How to create an installer for your project with Linins
+* How a regular user should use Active installer
+* How to create an installer for your project with Active installer
 * Final words
 
 ## Why to use this program
@@ -21,24 +21,24 @@ if you wanted to make an open source project one of the biggest challenges that 
 * You can specify a line of shell script to run when a certain hardware device exist (e.g GPU , network adaptors)
 * You can specify a line of shell script to run when a certain software path exist (e.g GCC , Python , Nim , R)
 * You can clone any other additionl repositories
-* You can clone repositories that support Linins Installation file's format "InstallFile" and install additional software that is specified in those repositories installtion files without worrying about how to install them when you writing your installtion files
+* You can clone repositories that support Active installer Installation file's format "InstallFile" and install additional software that is specified in those repositories installtion files without worrying about how to install them when you writing your installtion files
 
-## how a regular user should use Linins
+## how a regular user should use Active installer
 
-if you want to install a repository or source code that support Linins installation file format `InstallFile` then to install Linins do this:  
+if you want to install a repository or source code that support Active installer installation file format `InstallFile` then to install Active installer do this:  
 
-save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) and run it
+save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/install.sh) and run it
 ``` bash
 user@machine:~$ sh install.sh
 ``` 
 
-Now Linins is ready. if you have the repository Git URL and that project supports Linins, to download the repository and install it automatically write:
+Now Active-Installer is ready. if you have the repository Git URL and that project supports Active installer, to download the repository and install it automatically write:
 
 ``` bash
-user@machine:~$ linins clone [URL]
+user@machine:~$ active clone [URL]
 ```
 
-or if you have the source code for a project and the project has Linins installtion files `InstallFile` write:
+or if you have the source code for a project and the project has Active installtion files `InstallFile` write:
 
 ``` bash
 user@machine:~$ cd (path to the folder that contains 'InstallFile')
@@ -46,32 +46,32 @@ user@machine:~$ cd (path to the folder that contains 'InstallFile')
 ```
 
 ``` bash
-user@machine:~$ linins install
+user@machine:~$ active install
 ```
-If you wanted to access and change Linins settings write:
+If you wanted to access and change Active installer settings write:
 ``` bash
-user@machine:~$ sudo linins settings
+user@machine:~$ sudo active settings
 ```
-if you ran into any problems for example your files are deleted or Linins is not functioning correctly then rerun the installtion script  
+if you ran into any problems for example your files are deleted or Active installer is not functioning correctly then rerun the installtion script  
 `sh install.sh` and it's okay to see some error messages
 
 ## How a developer who wants to create an installer and a compiler for his/her project should use this program
 
-1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Linins/main/install.sh) then run it
+1. save this [script](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/install.sh) then run it
 ```
 user@machine:~$ sh install.sh
 ```
 
 2. create installation file script in a file called `InstallFile` which we will talk about how to write the script inside it in the next section
 
-3. add [`Linins-installer.py`](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/Linins-installer.sh) to the same path that `InstallFile` is located
+3. add [`active-installer.py`](https://github.com/Hussein-L-AlMadhachi/Active-Installer/raw/main/a-installer.sh) to the same path that `InstallFile` is located
 
-4. Now the user can use [`Linins-installer.sh`](https://github.com/Hussein-L-AlMadhachi/Linins/raw/main/Linins-installer.sh) to install Linins and run your installation script automatically and notify the user that you support Linins installation files so they can clone your repository using `linins clone [your URL]`
+4. Now the user can use `active-installer.sh` to install Active installer and run your installation script automatically but you only need to notify the user that you support Active installation files so they can clone your repository using `active clone [your URL]`
 
 # Creating Installation files
 installation files are just a regular shell scripts and the only difference is that it contains some suffix and notations to specify when a line of script should run these suffix so first create a file called `InstallFile` then follow these instruction to write your script  
 
-Linins provide you five ways to write your installtion file's script:
+Active installer provides you five ways to write your installtion file's script:
 
 ## regular shell script
 runs on any computer you should write it just like any regular shell script for example
@@ -100,7 +100,7 @@ for example:
 5 echo "hello Alpine Linux user"
 ```
 
-if you think we forgot some distributions or open source operating systems tell us in the [Discussions](https://github.com/Hussein-L-AlMadhachi/Linins/discussions)
+if you think we forgot some distributions or open source operating systems tell us in the [Discussions](https://github.com/Hussein-L-AlMadhachi/Active-Installer/discussions)
 
 
 ## A script specific for a gourp of distributions or operating systems
@@ -147,7 +147,7 @@ so the script for python3.9 inside the `InstallFile` should be:
 # Debug your installation script
 to see how your script in executed you use
 ```
-user@machine:~$ linins debug
+user@machine:~$ active debug
 ```
 if the executed script was `#` that means that line of script is not executed either because of wrong script or the specific lines of script don't match with what you have (e.g Hardware device , Software path , Operating system) on your computer
 
@@ -156,5 +156,5 @@ Have you seen any problem?
 Do you think there is something we forgot?  
 Do you have some ideas about how to improve this program?  
 
-Join our [Community discussions](https://github.com/Hussein-L-AlMadhachi/Linins/discussions)  
-Report an [Isseue](https://github.com/Hussein-L-AlMadhachi/Linins/issues)
+Join our [Community discussions](https://github.com/Hussein-L-AlMadhachi/Active-Installer/discussions)  
+Report an [Isseue](https://github.com/Hussein-L-AlMadhachi/Active-Installer/issues)
