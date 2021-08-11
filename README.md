@@ -6,6 +6,11 @@
 Linins is souce code installer for compiling and installing source code with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible for Linux and also other open source operating systems
 ---
 
+# Content
+1. ![The introduction]()
+2. ![How a regular user should use Linins]()
+3. ![How to create an installer for your project with Linins]()
+5. ![Final words]()
 
 ## Introduction
 
