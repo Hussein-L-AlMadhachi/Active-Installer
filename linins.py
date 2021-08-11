@@ -150,6 +150,7 @@ if len( args )  >  1:
         print("    linins settings\t    to access program's settings")
         exit(0)
 
+        
 else:
     print("\nUsage:")
     print("    linins install\t    run the installtion scripts")
