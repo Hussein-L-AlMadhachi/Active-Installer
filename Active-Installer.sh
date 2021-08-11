@@ -19,7 +19,7 @@ import os
 if os.path.isfile(\"/usr/bin/linins\"):
     os.system(\"linins install\")
 else:
-    os.system(\"git clone https://github.com/Hussein-L-AlMadhachi/Linins.git; cd Linins ; sh install.sh ; linins install\")
+    os.system(\"git clone https://github.com/Hussein-L-AlMadhachi/Active-Installer.git; cd Active-Installer ; sh install.sh ; active install\")
 " > install.py
 
 
