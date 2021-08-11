@@ -64,9 +64,9 @@ user@machine:~$ sh install.sh
 
 2. create installation file script in a file called `InstallFile` which we will talk about how to write the script inside it in the next section
 
-3. add [`active-installer.py`](https://github.com/Hussein-L-AlMadhachi/Active-Installer/raw/main/a-installer.sh) to the same path that `InstallFile` is located
+3. add [`active-installer.sh`](https://github.com/Hussein-L-AlMadhachi/Active-Installer/raw/main/active-installer.sh) to the same path that `InstallFile` is located
 
-4. Now the user can use `active-installer.sh` to install Active installer and run your installation script automatically but you only need to notify the user that you support Active installation files so they can clone your repository using `active clone [your URL]`
+4. Now the user can use `active-installer.sh` to install Active installer and run your installation script automatically once your user run the installer, so you only need to notify the user that you support Active installation files so they can clone your repository using `active clone [your URL]`
 
 # Creating Installation files
 installation files are just a regular shell scripts and the only difference is that it contains some suffix and notations to specify when a line of script should run these suffix so first create a file called `InstallFile` then follow these instruction to write your script  
@@ -106,7 +106,7 @@ if you think we forgot some distributions or open source operating systems tell 
 ## A script specific for a gourp of distributions or operating systems
 runs when the operating system that the user has is inside the the group 
 ```
-{ [distribution number] , [distribution number] }  [script]
+{ [distribution number 1] , [distribution number 2] }  [script]
 ```
 Note: space are tolerated inside `{}`
 
