@@ -2,8 +2,7 @@
 
 echo "[!] this requires root permissions"
 
-rm -rf ~/.Linins
 
-sudo rm /usr/bin/linins 
-sudo rm -rf /ect/Linins
-
+sudo rm /usr/bin/active 
+sudo rm -rf /ect/active
+sudo rm -rf /usr/src/active
