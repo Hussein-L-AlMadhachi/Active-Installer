@@ -10,7 +10,7 @@ settings = {}
 class SettingFile:
     def __init__( self ):
         # this file stores the number that referes to the users distro and stores programs that needs root permissions
-        self.SettingFile = "/etc/Linins/SettingFile"
+        self.SettingFile = "/etc/active/SettingFile"
 
     #   load settings from SettingFile    
     def load( self ):
@@ -38,7 +38,7 @@ class SettingFile:
 class InstallFile:
 #   inintialisation
     def __init__( self ):
-        file_descriptor = open( "/etc/Linins/HardwareInfo" , "r" )
+        file_descriptor = open( "/etc/active/HardwareInfo" , "r" )
         self.info = file_descriptor.read()
         file_descriptor.close()
 
