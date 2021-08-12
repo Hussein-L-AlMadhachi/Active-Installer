@@ -73,7 +73,7 @@ installation files are just a regular shell scripts and the only difference is t
 
 Active installer provides you five ways to write your installtion file's script:
 
-## regular shell script
+## Regular shell script
 runs on any computer you should write it just like any regular shell script for example
 ```
 echo "hello this is a computer that runs shell script"
