@@ -80,7 +80,7 @@ echo "hello this is a computer that runs shell script"
 ```
 
 
-## one distribution or one operating system specific script
+## One distribution or one operating system specific script
 runs only when the script runs on the specified distribution you should write it in this order
 ```
 [disribution number] [script]
