@@ -31,7 +31,7 @@ cd Active-Installer
 
 sudo cp ./active.py /usr/src/active
 sudo cp ./ParserLib.py /usr/src/active
-chmod +x /usr/src/active/active.py
+sudo chmod +x /usr/src/active/active.py
 
 sudo touch /etc/active/SettingFile
 lspci > HardwareInfo && sudo mv HardwareInfo /etc/active
