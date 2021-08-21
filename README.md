@@ -1,5 +1,5 @@
 # Active source code installer
-##### Active installer 2021 version 0.1.0
+##### Active installer 2021 version 0.1.2
 
 ![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png)
 
