@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo Installing Active installer 2021 version 0.1.0
+echo Installing Active installer 2021 version 0.1.2
 
 echo "[o] Note: this requires root permission"
 echo "[*] It is ok to see some errors"
