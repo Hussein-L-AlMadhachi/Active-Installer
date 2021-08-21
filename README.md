@@ -107,7 +107,7 @@ if you think we forgot some distributions or open source operating systems tell 
 ## A script specific for a gourp of distributions or operating systems
 runs when the operating system that the user has is inside the the group 
 ```
-{ [distribution number 1] , [distribution number 2] }  [script]
+{ [distribution number] , [distribution number] }  [script]
 ```
 Note: space are tolerated inside `{}`
 
