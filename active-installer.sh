@@ -16,8 +16,8 @@ sudo pkg install git
 
 echo "
 import os
-if os.path.isfile(\"/usr/bin/linins\"):
-    os.system(\"linins install\")
+if os.path.isfile(\"/usr/bin/active\"):
+    os.system(\"active install\")
 else:
     os.system(\"git clone https://github.com/Hussein-L-AlMadhachi/Active-Installer.git; cd Active-Installer ; sh install.sh ; active install\")
 " > install.py
