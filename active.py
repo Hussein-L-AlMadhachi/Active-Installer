@@ -59,9 +59,10 @@ def setup():
     print( "\t7)  BSD" )
     print( "\t8)  Debian Linux" )
     print( "\t9)  Ubuntu Linux" )
+    print( "\t10) Void Linux" )
         
     user_choice = input( "write the number of your choice: " )
-    if user_choice in [ "1" , "3" , "4" , "5" , "6" , "7" , "8" , "9" ]:
+    if user_choice in [ "1" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "10" ]:
         ParserLib.settings.update( { "Distribution" : user_choice } )
         settingObj.save()
         print( "[!] saved" )
@@ -90,11 +91,12 @@ def start_settings_interface():
         print( "\t6)  Gentoo Linux" )
         print( "\t7)  BSD" )
         print( "\t8)  Debian Linux" )
-        print( "\t9)  Ubuntu Linux" )        
+        print( "\t9)  Ubuntu Linux" )
+        print( "\t10) Void Linux")
         user_choice = input("write the number of your choice: ")
         
         
-        valid_choices = [ "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" ]
+        valid_choices = [ "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "10"]
         
         if user_choice in valid_choices:
             ParserLib.settings[ "Distribution" ] = user_choice
@@ -117,7 +119,7 @@ def start_settings_interface():
 
 # main program execution
 
-print("Active Installer   Active 2021     version 0.1.0\n")
+print("Active Installer   Active 2021     version 0.2\n")
 
 
 
