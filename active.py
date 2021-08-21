@@ -117,7 +117,7 @@ def start_settings_interface():
 
 # main program execution
 
-print("The Linux Installer   Linins 2021     version 0.1.0\n")
+print("Active Installer   Active 2021     version 0.1.0\n")
 
 
 
@@ -143,19 +143,19 @@ if len( args )  >  1:
     # invalid arguements
     else:
         print("\nUsage:")
-        print("    linins install\t    run the installtion scripts")
-        print("    linins debug\t    debug the installtion scripts (for developers)")
-        print("    linins clone [url]\t    clone a repository and install it")
-        print("    linins setup\t    setting up the program")
-        print("    linins settings\t    to access program's settings")
+        print("    active install\t    run the installtion scripts")
+        print("    active debug\t    debug the installtion scripts (for developers)")
+        print("    active clone [url]\t    clone a repository and install it")
+        print("    active setup\t    setting up the program")
+        print("    active settings\t    to access program's settings")
         exit(0)
 
         
 else:
     print("\nUsage:")
-    print("    linins install\t    run the installtion scripts")
-    print("    linins debug\t    debug an installtion file (for developers)")
-    print("    linins clone [url]\t    clone a repository and install it")
-    print("    linins setup\t    setting up the program")
-    print("    linins settings\t    to access program's settings")
+    print("    active install\t    run the installtion scripts")
+    print("    active debug\t    debug an installtion file (for developers)")
+    print("    active clone [url]\t    clone a repository and install it")
+    print("    active setup\t    setting up the program")
+    print("    active settings\t    to access program's settings")
     exit(0)
