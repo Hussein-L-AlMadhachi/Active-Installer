@@ -8,4 +8,4 @@ parameters = ""
 for arguement in arguements[ 1 : ]:
     parameters += " " + arguement
 
-system( "/usr/src/Linins/linins.py " + parameters )
+system( "/usr/src/active/active.py " + parameters )
