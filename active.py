@@ -119,7 +119,7 @@ def start_settings_interface():
 
 # main program execution
 
-print("Active Installer   Active 2021     version 0.2\n")
+print("Active Installer   Active 2021     version 0.1.2\n")
 
 
 
