@@ -95,6 +95,7 @@ where the numbers for each disribution are:
 `7` for BSD  
 `8` for Debian Linux  
 `9` for Ubuntu Linux  
+`10` for Void Linux
 for example:
 ```
 5 echo "hello Alpine Linux user"
