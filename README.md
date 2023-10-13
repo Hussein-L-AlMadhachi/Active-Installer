@@ -1,9 +1,10 @@
 # Active source code installer
 ##### Active installer 2021 version 0.1.2
 
-![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png)
+![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png) 
 
 Active installer is souce code installer for compiling and installing source code with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible for Linux and also other open source operating systems
+
 ---
 
 # Content
