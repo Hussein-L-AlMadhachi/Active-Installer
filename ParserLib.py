@@ -94,8 +94,10 @@ class InstallFile:
         selector = ""
         params = ""
         should_execute = True
+        if scriptline.strip() == "exec":
+            return {"selector": "exec", "should-execute":True , "params":None}
 
-        if ("{" in scriptline):
+        elif ("{" in scriptline):
             index = scriptline.index("{")
             selector = scriptline[ :index ].strip()
             if "not" in selector:
@@ -126,6 +128,8 @@ class InstallFile:
                 return self.check_path( parse_params["params"] )
             else:
                 return not self.check_path( parse_params["params"] )
+        elif parse_params["selector"] == "exec":
+            return True
         else:
             print( "HOW THE HELL DO YOU GET HERE!!!" )
 
@@ -166,11 +170,13 @@ class InstallFile:
                     should_execute = self.should_exec( p )
                     keep_going = True
                     if debug:
-                        if should_execute:
+                        if p["selector"] == "exec":
+                            print( "\033[32m", counter , " |   execute this \033[0m" ) 
+                        elif should_execute:
                             if p["should-execute"]:
                                 print( "\033[32m", counter , " |   the " , p["selector"] , p["params"] ," exist, execute this {\033[0m" )
                             else:
-                                print( "\033[32m", counter , " |   the " , p["selector"] , p["params"] ,"does not exist , execute this {\033[0m" )
+                                print( "\033[32m", counter , " |   the " , p["selector"] , p["params"] ,"does not exist , execute this\033[0m" )
                         else:
                             if p["should-execute"]:
                                 print( "\033[31m", counter , " |   the condition " , p["selector"] , p["params"] ," exist , was unmet\033[0m" )
