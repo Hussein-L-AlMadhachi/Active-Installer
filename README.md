@@ -52,7 +52,7 @@ user@machine:~$ active install
 ```
 If you wanted to access and change Active installer settings write:
 ``` bash
-user@machine:~$ sudo active settings
+user@machine:~$ sudo active setup
 ```
 if you ran into any problems for example your files are deleted or Active installer is not functioning correctly then rerun the installtion script  
 `sh install.sh` and it's okay to see some error messages
