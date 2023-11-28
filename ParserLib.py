@@ -1,8 +1,9 @@
 #/usr/bin/env python3
 
-import os
+from os import system , path
 import json
 
+__version__ = "0.2.1"
 
 
 """ in SettingFile class"""
@@ -10,12 +11,28 @@ class SettingFile:
     def __init__( self ):
         self.SettingFile = "/etc/active/SettingFile.json"
         self.settings = {}
-        self.valid_os_ids = [ "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "10" ]
+        self.os_ids = {
+            "1":"arch",
+            "2":"fedora",
+            "3":"opensuse",
+            "4":"cent os",
+            "5":"alpine",
+            "6":"gentoo",
+            "7":"freebsd",
+            "8":"netbsd",
+            "9":"openbsd",
+            "10":"debian",
+            "11":"ubuntu",
+            "12":"void"
+        }
         
-        if not os.path.exists( "/etc/active/SettingFile.json" ):
+        if not path.exists( "/etc/active/SettingFile.json" ):
             self.setup()
         else:
             self.load()
+            if self.settings.get("version") != __version__:
+                print( "[*] setting up Active Installer after updates..." )
+                self.setup()
 
     def load( self ):
         file_descriptor = open( self.SettingFile , "r" )
@@ -31,6 +48,7 @@ class SettingFile:
         file_descriptor.write( json.dumps( self.settings ) )
         file_descriptor.close()
 
+
     def setup( self ):
         print( "current settings:\n" )
         if self.settings != {}:
@@ -39,38 +57,34 @@ class SettingFile:
             if choice.strip().lower() != "y":
                 exit(0)
         else:
-            print("setting active installer for the first time..\n\n")
+            print("[*] setting active installer for the first time...\n\n")
         
         print( "What is the Linux disribution that you are using?" )
-        print( "\t1)  Arch Linux" )
-        print( "\t2)  Fedora Linux" )
-        print( "\t3)  OpenSUSE Linux" )
-        print( "\t4)  CentOS" )
-        print( "\t5)  Apline Linux" )
-        print( "\t6)  Gentoo Linux" )
-        print( "\t7)  BSD" )
-        print( "\t8)  Debian Linux" )
-        print( "\t9))  Ubuntu Linux" )
-        print( "\t10) Void Linux" )
+        print( "\t1)   Arch Linux" )
+        print( "\t2)   Fedora Linux" )
+        print( "\t3)   OpenSUSE Linux" )
+        print( "\t4)   CentOS" )
+        print( "\t5)   Apline Linux" )
+        print( "\t6)   Gentoo Linux" )
+        print( "\t7)   FreeBSD" )
+        print( "\t8)   NetBSD" )
+        print( "\t9)   OpenBSD" )
+        print( "\t10)  Debian Linux" )
+        print( "\t11)  Ubuntu Linux" )
+        print( "\t12)  Void Linux" )
         
         print( "\n\ttype 0 to exit" )
 
         choice = str(input( "your choice: " ))
 
-        if choice.strip() in self.valid_os_ids:
-            self.settings["os"] = choice.strip()
+        if choice.strip() in list(self.os_ids.keys()):
+            self.settings["os"] = self.os_ids[choice.strip()]
+            self.settings["version"] = __version__
             self.save()
         else:
             print( "you have to choose on of the given numbers only" )
-    def info( self ):
-        print( self.settings )
 
 
-
-from os import system
-
-
-selectors = ["pci" , "path" , "file"]
 
 
 class InstallFile:
@@ -78,14 +92,21 @@ class InstallFile:
         file_descriptor = open( "/etc/active/HardwareInfo" , "r" )
         self.info = file_descriptor.read()
         file_descriptor.close()
+        settingObj = SettingFile()
+        self.settings = settingObj.settings
+        del settingObj
+        self.selectors = ["pci" , "path" , "os"]
 
 
     def check_pci( self, device ):
         return  device in self.info
 
-    def check_path( self , path ):
-        return  os.path.exists( path )
+    def check_path( self , fsys_path ):
+        return  path.exists( fsys_path )
 
+    def check_os( self , os ):
+        os = os.strip()
+        return self.settings.get("os") == os
 
     def parse( self , scriptline ):
 
@@ -104,34 +125,45 @@ class InstallFile:
                 should_execute = False
                 selector = selector[:-3].strip()
             
-            if not( selector in selectors):
-                return "Wrong selector: it should be one of the following  pci , file , cpuinfo , software"
+            if not( selector in self.selectors):
+                return "Wrong selector: it should be one of the following  pci , path , os"
             
             if "}" in scriptline[index:]:
                 params = scriptline[ index+1:scriptline.index("}") ]
                 return {"selector":selector , "should-execute":should_execute , "params":params}
             else:
-                return "you cannot leave {} open"
+                return "you should not leave {...} open"
             
         else:
-            return "you need to add to put your parameters inside {}"
+            return "you need to add to put your parameters inside {...}"
 
     def should_exec( self ,  parse_params ):
+        # PCI
         if parse_params["selector"] == "pci":
             if parse_params["should-execute"]:
                 return self.check_pci( parse_params["params"] )
             else:
                 return not self.check_pci( parse_params["params"] )
 
+        # Path
         elif parse_params["selector"] == "path":
             if parse_params["should-execute"]: 
                 return self.check_path( parse_params["params"] )
             else:
                 return not self.check_path( parse_params["params"] )
+        
+        # OS
+        elif parse_params["selector"] == "os":
+            if parse_params["should-execute"]: 
+                return self.check_os( parse_params["params"] )
+            else:
+                return not self.check_os( parse_params["params"] )
+
+        # Execute
         elif parse_params["selector"] == "exec":
             return True
         else:
-            print( "HOW THE HELL DO YOU GET HERE!!!" )
+            print( "ERROR No.1: please report this error you should not see this if Active Installer is running as intended" )
 
 
 
