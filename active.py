@@ -49,10 +49,12 @@ def setup():
 
 def show_help():
         print("\nUsage:")
-        print("    active install\t    run the installtion scripts")
-        print("    active debug\t    run the installtion scripts in debug mode (for developers)")
+        print("    active help\t           show this help")
+        print("    active version\t        show the version of Active installer")
+        print("    active install\t        run the installtion scripts")
+        print("    active debug\t          run the installtion scripts in debug mode (for developers)")
         print("    active clone [url]\t    clone a repository and install it")
-        print("    active setup\t    setting up the program")
+        print("    active setup\t          setting up the program")
         exit(0)
 
 
@@ -79,6 +81,12 @@ if len( args )  >  1:
     # setup
     elif args[1] == "setup":
         setup()
+    # help
+    elif args[1] == "help":
+        show_help()
+    # version
+    elif args[1] == "version":
+        exit(0)
     
     # invalid arguements
     else:
