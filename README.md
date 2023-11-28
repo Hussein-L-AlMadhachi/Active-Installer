@@ -1,10 +1,10 @@
-# Active source code installer
+# Active installer
 ##### Active installer 2021 version 0.1.2 
 
 
 ![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png) 
 
-Active installer is souce code installer for compiling and installing source code with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible for Linux and also other open source operating systems
+Active installer is an installer for compiling and installing source code and binaries with the ability to write scripts that runs when a specified operating systems or distribution exist, or when a particular hardware device or software exist on the users computers. this project aim to make an automated installation possible for Linux and also and few other operating systems
 
 ---
 
@@ -16,7 +16,7 @@ Active installer is souce code installer for compiling and installing source cod
 
 ## Why to use this program
 
-if you wanted to make an open source project one of the biggest challenges that you have to face, is that your users uses a wide range of hardware devices , operating systems and software. and if your users do not have the needed technical knowladge, they cannot compile the source code and install all the required dependencies to use your program. so the author of the project has to compile the source code for each operating system and in some cases for some certain hardware devices or some certain software. that is why this program aims to solve this problem by providing you with the followings options to add to your shell scripts:
+if you wanted to make an open source project one of the biggest challenges that you have to face, is that your users uses a wide range of hardware devices , operating systems and software. and if your users do not have the needed technical knowladge, they cannot compile the source code and install all the required dependencies to use your program. so the author of the project has to compile the source code and the binaries needed for each operating system and in some cases for some certain hardware devices or some certain software. that is why this program aims to solve this problem by providing you with the followings options to add to your shell scripts:
 
 
 * You can specify a line of shell script to run only when the user is using a certain Linux distribution or a certain operating system
