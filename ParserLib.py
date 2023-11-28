@@ -115,6 +115,7 @@ class InstallFile:
         selector = ""
         params = ""
         should_execute = True
+
         if scriptline.strip() == "exec":
             return {"selector": "exec", "should-execute":True , "params":None}
 
@@ -126,10 +127,12 @@ class InstallFile:
                 selector = selector[:-3].strip()
             
             if not( selector in self.selectors):
-                return "Wrong selector: it should be one of the following  pci , path , os"
+                return "\"" + selector + "\" is not a valid option. this can be only one of the followings: \"exec\" , \"pci\" , \"path\" or \"os\"."
             
             if "}" in scriptline[index:]:
                 params = scriptline[ index+1:scriptline.index("}") ]
+                if scriptline[ scriptline.index("}")+1: ].strip() != "":
+                    return "unexpected token \""+scriptline[ scriptline.index("}")+1: ].strip()+"\" you shouldn't add anything after \"}\""
                 return {"selector":selector , "should-execute":should_execute , "params":params}
             else:
                 return "you should not leave {...} open"
@@ -180,6 +183,9 @@ class InstallFile:
             
             if line.strip() == "":
                 continue
+            
+            elif line.strip()[0] == "#":
+                continue
 
             if keep_going:
                 if line.strip() == "end":
@@ -195,8 +201,9 @@ class InstallFile:
             else:
                 p = self.parse( line )
                 if type(p) == str:
-                    print( counter , "|\t" , line )
-                    print( "ERROR in line " , counter , ":  " ,p )
+                    print("\n\n \033[31mSYNTAX ERROR: the InstallFile is written incorrectly \033[0m")
+                    print( "\033[33m [!] " , counter , "|\033[0m\t" , line[:-1] )
+                    print( "\033[31m in line" , counter , "\033[0m: \033[33m" , p , "\033[0m" )
                     exit(-1)
                 else:
                     should_execute = self.should_exec( p )
@@ -211,7 +218,7 @@ class InstallFile:
                                 print( "\033[32m", counter , " |   the " , p["selector"] , p["params"] ,"does not exist , execute this\033[0m" )
                         else:
                             if p["should-execute"]:
-                                print( "\033[31m", counter , " |   the condition " , p["selector"] , p["params"] ," exist , was unmet\033[0m" )
+                                print( "\033[36m", counter , " |   the condition " , p["selector"] , p["params"] ," exist was unmet\033[0m" )
                             else:
-                                print( "\033[31m", counter , " |   the condition" , p["selector"] , p["params"] ,"does not exist , was unmet\033[0m" )
+                                print( "\033[36m", counter , " |   the condition" , p["selector"] , p["params"] ,"does not exist was unmet\033[0m" )
         file_stream.close()
