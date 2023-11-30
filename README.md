@@ -2,7 +2,7 @@
 ##### Active installer 2023 version 0.2.1
 
 NOTE: 
-this project is under heavy development. this documentation is outdated, it will be updated very soon once the new updates are one
+this project is under heavy development. this documentation is outdated, it will be updated very soon once the new updates are done
 
 ![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png) 
 
