@@ -84,7 +84,7 @@ class SettingFile:
         else:
             print( "you have to choose on of the given numbers only" )
 
-
+    
 
 
 class InstallFile:
@@ -98,13 +98,13 @@ class InstallFile:
         self.selectors = ["pci" , "path" , "os"]
 
 
-    def check_pci( self, device ):
+    def _check_pci( self, device ):
         return  device in self.info
 
-    def check_path( self , fsys_path ):
+    def _check_path( self , fsys_path ):
         return  path.exists( fsys_path )
 
-    def check_os( self , os ):
+    def _check_os( self , os ):
         os = os.strip()
         return self.settings.get("os") == os
 
@@ -116,8 +116,14 @@ class InstallFile:
         params = ""
         should_execute = True
 
+        parsed = []
+
         if scriptline.strip() == "exec":
-            return {"selector": "exec", "should-execute":True , "params":None}
+            return [{
+                "selector": "exec",
+                "should-exist":None,
+                "params":None
+            }]
 
         elif ("{" in scriptline):
             index = scriptline.index("{")
@@ -131,44 +137,92 @@ class InstallFile:
             
             if "}" in scriptline[index:]:
                 params = scriptline[ index+1:scriptline.index("}") ]
-                if scriptline[ scriptline.index("}")+1: ].strip() != "":
-                    return "unexpected token \""+scriptline[ scriptline.index("}")+1: ].strip()+"\" you shouldn't add anything after \"}\""
-                return {"selector":selector , "should-execute":should_execute , "params":params}
+
+                parsed.append({
+                    "selector":selector ,
+                    "should-exist":should_execute ,
+                    "params":params
+                })
+
+                next_token = scriptline[ scriptline.index("}")+1: ].strip()
+                if next_token != "":
+                    if next_token[:4] == "and " or next_token[:4] == "and\t":
+                        parsed.append("and")
+                        next_token = next_token[4:]
+
+
+                    elif next_token[:3] == "or " or next_token[:3] == "or\t":
+                        parsed.append("or")
+                        next_token = next_token[3:]
+
+                    else:
+                        if " " in  next_token:
+                            return "unexpected token \""+next_token[:next_token.find(" ")].strip()+"\" after \"}\" you should use \"or\" or \"and\" or you can leave it empty"
+                        else:
+                            return "unexpected token \""+next_token.strip()+"\" after \"}\" you should use \"or\" or \"and\" or you can leave it empty"
+                    p = self.parse( next_token )
+                    if type(p) != str:
+                        for element in p:
+                            parsed.append( element )
+                        return parsed
+                    else:
+                        return p
+                
+                return parsed
             else:
                 return "you should not leave {...} open"
             
         else:
-            return "you need to add to put your parameters inside {...}"
+            return "you need to add your parameters inside {...}"
 
-    def should_exec( self ,  parse_params ):
+    def should_exec( self , parser_params ):
+        last_condition = self._check_exec( parser_params[0] )
+        
+        i = 1
+        while i < len( parser_params ):
+            if parser_params[ i ] == "and":
+                i += 1
+                last_condition = last_condition and self._check_exec( parser_params[ i ] )
+            elif parser_params[ i ] == "or":
+                i += 1
+                last_condition = last_condition or self._check_exec( parser_params[ i ] )
+            else:
+                print( "ERROR No.2: please report this error you should not see this if Active Installer is running as intended" )
+                exit(-1)
+            i += 1
+        
+        return last_condition
+
+
+    def _check_exec( self ,  parse_param ):
         # PCI
-        if parse_params["selector"] == "pci":
-            if parse_params["should-execute"]:
-                return self.check_pci( parse_params["params"] )
+        if parse_param["selector"] == "pci":
+            if parse_param["should-exist"]:
+                return self._check_pci( parse_param["params"] )
             else:
-                return not self.check_pci( parse_params["params"] )
-
+                return not self._check_pci( parse_param["params"] )
+        
         # Path
-        elif parse_params["selector"] == "path":
-            if parse_params["should-execute"]: 
-                return self.check_path( parse_params["params"] )
+        elif parse_param["selector"] == "path":
+            if parse_param["should-exist"]: 
+                return self._check_path( parse_param["params"] )
             else:
-                return not self.check_path( parse_params["params"] )
+                return not self._check_path( parse_param["params"] )
         
         # OS
-        elif parse_params["selector"] == "os":
-            if parse_params["should-execute"]: 
-                return self.check_os( parse_params["params"] )
+        elif parse_param["selector"] == "os":
+            if parse_param["should-exist"]: 
+                return self._check_os( parse_param["params"] )
             else:
-                return not self.check_os( parse_params["params"] )
+                return not self._check_os( parse_param["params"] )
 
         # Execute
-        elif parse_params["selector"] == "exec":
+        elif parse_param["selector"] == "exec":
             return True
+
         else:
             print( "ERROR No.1: please report this error you should not see this if Active Installer is running as intended" )
-
-
+            exit(-1)
 
     def execute( self, filename , debug=False ):
         file_stream = open( filename , "r" )
@@ -196,7 +250,7 @@ class InstallFile:
 
                 elif should_execute:
                     if debug:
-                        print(  counter , " |\texecuting:" , line )
+                        print(  counter , " |\texecuting:" , line[:-1] )
                     system( line )
             else:
                 p = self.parse( line )
@@ -209,16 +263,10 @@ class InstallFile:
                     should_execute = self.should_exec( p )
                     keep_going = True
                     if debug:
-                        if p["selector"] == "exec":
-                            print( "\033[32m", counter , " |   execute this \033[0m" ) 
+                        if p[0]["selector"] == "exec":
+                            print( "\033[32m", counter , " |   exec \033[0m    \033[33mexecuting shell script\033[0m" ) 
                         elif should_execute:
-                            if p["should-execute"]:
-                                print( "\033[32m", counter , " |   the " , p["selector"] , p["params"] ," exist, execute this {\033[0m" )
-                            else:
-                                print( "\033[32m", counter , " |   the " , p["selector"] , p["params"] ,"does not exist , execute this\033[0m" )
+                                print( "\033[32m", counter , " | " , line[:-1] , "     [condition was met]\033[0m" )
                         else:
-                            if p["should-execute"]:
-                                print( "\033[36m", counter , " |   the condition " , p["selector"] , p["params"] ," exist was unmet\033[0m" )
-                            else:
-                                print( "\033[36m", counter , " |   the condition" , p["selector"] , p["params"] ,"does not exist was unmet\033[0m" )
+                            print( "\033[90m", counter , " | " , line[:-1] , "      [condition was not met]\033[0m" )
         file_stream.close()
