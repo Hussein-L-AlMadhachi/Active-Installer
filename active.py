@@ -47,16 +47,16 @@ def setup():
     global SettingObj
     SettingObj.setup()
 
-def show_help():
-        print("\nUsage:")
-        print("    active help\t           show this help")
-        print("    active version\t        show the version of Active installer")
-        print("    active install\t        run the installtion scripts")
-        print("    active debug\t          run the installtion scripts in debug mode (for developers)")
-        print("    active clone [url]\t    clone a repository and install it")
-        print("    active setup\t          setting up the program")
-        exit(0)
 
+def show_help():
+    print("\nUsage:")
+    print("    active help               show this help")
+    print("    active version            show the version of Active installer")
+    print("    active install            run the installtion scripts")
+    print("    active debug              run the installtion scripts in debug mode (for developers)")
+    print("    active clone [url]        clone a repository and install it")
+    print("    active setup              setting up the program\n")
+    exit(0)
 
 
 # main program execution
