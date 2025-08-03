@@ -1,7 +1,7 @@
 # Active installer
 ##### Active installer 2023 version 0.2.1 
 
-Note: this project is no longer maintained and it has been replaced with [Rhenium](https://github.com/Hussein-L-AlMadhachi/Rhenium)
+> Note: this project is no longer maintained and it has been replaced with [Rhenium](https://github.com/Hussein-L-AlMadhachi/Rhenium)
 
 ![The Active installer](https://raw.githubusercontent.com/Hussein-L-AlMadhachi/Active-Installer/main/ACTIVE.png) 
 
